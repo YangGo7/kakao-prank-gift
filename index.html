@@ -7,10 +7,9 @@
     <title>카카오톡 선물함 - [춘식이] 황금 상자 선물 도착!</title>
     <meta name="description" content="춘식이가 보낸 특별한 황금 선물을 확인하세요!">
     <!-- Open Graph for Link Preview -->
-    <meta property="og:title" content="춘식이가 선물을 보내왔어요!">
+    <meta property="og:title" content="춘식이가 선물을 보내왔어요! 🎁">
     <meta property="og:description" content="[만우절 단독] 춘식이가 직접 그린 황금 상자! 당신은 1TB급 행복에 당첨되셨습니다.">
-    <meta property="og:image"
-        content="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcbYmST%2FbtsGjYy6vX9%2FVlJrkZ6E4Xk0U0q0Xk0%2Fimg.png">
+    <meta property="og:image" content="https://YangGo7.github.io/kakao-prank-gift/choonsik_gift.png">
     <meta property="og:type" content="website">
     <link rel="stylesheet" href="style.css">
     <!-- Kakao SDK -->
@@ -87,42 +86,32 @@
 
         function sendKakaoLink() {
             if (!Kakao.isInitialized()) {
-                alert('카카오 JavaScript 키를 설정해 주세요! (설정방법은 가이드를 참고하세요)');
+                alert('카카오 JavaScript 키를 확인해 주세요!');
                 return;
             }
 
-            Kakao.Link.sendCustom({
-                templateId: 12345, // 여기에 생성한 템플릿 ID를 넣으세요
-                templateArgs: {
-                    'title': 'iPhone 15 Pro Max 골드 에디션',
-                    'description': '[만우절 단독] 무료 증정 이벤트에 당첨되셨습니다!'
-                }
-            });
-
-            // Or using Kakao.Link.sendDefault for simpler testing without template registration
-            /*
+            // Using Kakao.Link.sendDefault to mimic a real gift notification
             Kakao.Link.sendDefault({
                 objectType: 'feed',
                 content: {
-                    title: '선물이 도착했습니다!',
-                    description: 'iPhone 15 Pro Max 골드 에디션 (1TB)',
-                    imageUrl: '이미지_URL_여기에_입력',
+                    title: '카카오톡 선물이 도착했습니다! 🎁',
+                    description: '춘식이가 [만우절 한정] 황금 상자 1개를 보냈습니다. 유효기간: 오늘 하루!',
+                    imageUrl: 'https://YangGo7.github.io/kakao-prank-gift/choonsik_gift.png',
                     link: {
-                        mobileWebUrl: window.location.href,
-                        webUrl: window.location.href,
+                        mobileWebUrl: 'https://YangGo7.github.io/kakao-prank-gift/',
+                        webUrl: 'https://YangGo7.github.io/kakao-prank-gift/',
                     },
                 },
                 buttons: [
                     {
                         title: '선물 확인하기',
                         link: {
-                            mobileWebUrl: window.location.href,
-                            webUrl: window.location.href,
+                            mobileWebUrl: 'https://YangGo7.github.io/kakao-prank-gift/',
+                            webUrl: 'https://YangGo7.github.io/kakao-prank-gift/',
                         },
                     },
                 ],
             });
-            */
         }
     </script>
 </body>
