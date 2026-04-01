@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카카오톡 선물함 - [춘식이] 황금 상자 선물 도착!</title>
+    <meta name="description" content="춘식이가 보낸 특별한 황금 선물을 확인하세요!">
+    <!-- Open Graph for Link Preview -->
+    <meta property="og:title" content="춘식이가 선물을 보내왔어요!">
+    <meta property="og:description" content="[만우절 단독] 춘식이가 직접 그린 황금 상자! 당신은 1TB급 행복에 당첨되셨습니다.">
+    <meta property="og:image" content="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcbYmST%2FbtsGjYy6vX9%2FVlJrkZ6E4Xk0U0q0Xk0%2Fimg.png">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="style.css">
+    <!-- Kakao SDK -->
+    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="back-btn">&#10094;</div>
+            <h1>선물하기</h1>
+            <div class="utility-btns">
+              <span class="search-icon">🔍</span>
+              <span class="menu-icon">☰</span>
+            </div>
+        </header>
+
+        <!-- Product Image -->
+        <div class="product-image-container">
+            <img src="./choonsik_gift.png" alt="Choonsik's Special Box" class="product-image">
+            <div class="badge">D-DAY</div>
+        </div>
+
+        <!-- Product Translation -->
+        <div class="product-info">
+            <p class="brand">카카오 특별 제작</p>
+            <h2 class="title">[만우절 한정] 춘식이가 직접 그린 황금 상자 (1TB급 행복)</h2>
+            <div class="price-container">
+                <span class="discount">100%</span>
+                <span class="price">0원</span>
+                <span class="original-price">9,999,999원</span>
+            </div>
+        </div>
+
+        <!-- Section: Description -->
+         <div class="detail-section">
+            <div class="section-tabs">
+                <div class="tab active">상세정보</div>
+                <div class="tab">선물후기(4.1)</div>
+            </div>
+            <div class="content">
+                <p><strong>[서프라이즈]</strong> 카카오톡 친구들을 위한 특별한 만우절 이벤트!</p>
+                <p>지금 바로 '선물 전달하기' 버튼을 눌러 친구들에게도 황금빛 행운을 전달하세요.</p>
+                <div class="prank-note">
+                    *본 상품은 4월 1일 한정으로 제공되는 디지털 유머 상품입니다.
+                </div>
+            </div>
+         </div>
+
+        <!-- Fixed Bottom Buttons -->
+        <footer class="footer">
+            <button class="wishlist-btn">♡</button>
+            <button class="gift-btn" onclick="sendKakaoLink()">나에게 선물하기 (0원)</button>
+            <button class="share-btn" onclick="sendKakaoLink()">선물 전달하기</button>
+        </footer>
+    </div>
+
+    <script>
+        // Kakao SDK Initialization
+        // Insert your JavaScript Key here
+        const KAKAO_JS_KEY = 'ENTER_YOUR_KAKAO_JS_KEY_HERE'; 
+        
+        if (typeof Kakao !== 'undefined') {
+          try {
+            Kakao.init(KAKAO_JS_KEY);
+            console.log('Kakao SDK Initialized:', Kakao.isInitialized());
+          } catch (e) {
+            console.error('Kakao SDK initialization failed:', e);
+          }
+        }
+
+        function sendKakaoLink() {
+            if (!Kakao.isInitialized()) {
+                alert('카카오 JavaScript 키를 설정해 주세요! (설정방법은 가이드를 참고하세요)');
+                return;
+            }
+
+            Kakao.Link.sendCustom({
+                templateId: 12345, // 여기에 생성한 템플릿 ID를 넣으세요
+                templateArgs: {
+                    'title': 'iPhone 15 Pro Max 골드 에디션',
+                    'description': '[만우절 단독] 무료 증정 이벤트에 당첨되셨습니다!'
+                }
+            });
+            
+            // Or using Kakao.Link.sendDefault for simpler testing without template registration
+            /*
+            Kakao.Link.sendDefault({
+                objectType: 'feed',
+                content: {
+                    title: '선물이 도착했습니다!',
+                    description: 'iPhone 15 Pro Max 골드 에디션 (1TB)',
+                    imageUrl: '이미지_URL_여기에_입력',
+                    link: {
+                        mobileWebUrl: window.location.href,
+                        webUrl: window.location.href,
+                    },
+                },
+                buttons: [
+                    {
+                        title: '선물 확인하기',
+                        link: {
+                            mobileWebUrl: window.location.href,
+                            webUrl: window.location.href,
+                        },
+                    },
+                ],
+            });
+            */
+        }
+    </script>
+</body>
+</html>
