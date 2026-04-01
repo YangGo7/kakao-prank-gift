@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +9,16 @@
     <!-- Open Graph for Link Preview -->
     <meta property="og:title" content="춘식이가 선물을 보내왔어요!">
     <meta property="og:description" content="[만우절 단독] 춘식이가 직접 그린 황금 상자! 당신은 1TB급 행복에 당첨되셨습니다.">
-    <meta property="og:image" content="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcbYmST%2FbtsGjYy6vX9%2FVlJrkZ6E4Xk0U0q0Xk0%2Fimg.png">
+    <meta property="og:image"
+        content="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcbYmST%2FbtsGjYy6vX9%2FVlJrkZ6E4Xk0U0q0Xk0%2Fimg.png">
     <meta property="og:type" content="website">
     <link rel="stylesheet" href="style.css">
     <!-- Kakao SDK -->
     <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <div class="container">
         <!-- Header -->
@@ -22,8 +26,8 @@
             <div class="back-btn">&#10094;</div>
             <h1>선물하기</h1>
             <div class="utility-btns">
-              <span class="search-icon">🔍</span>
-              <span class="menu-icon">☰</span>
+                <span class="search-icon">🔍</span>
+                <span class="menu-icon">☰</span>
             </div>
         </header>
 
@@ -45,7 +49,7 @@
         </div>
 
         <!-- Section: Description -->
-         <div class="detail-section">
+        <div class="detail-section">
             <div class="section-tabs">
                 <div class="tab active">상세정보</div>
                 <div class="tab">선물후기(4.1)</div>
@@ -57,7 +61,7 @@
                     *본 상품은 4월 1일 한정으로 제공되는 디지털 유머 상품입니다.
                 </div>
             </div>
-         </div>
+        </div>
 
         <!-- Fixed Bottom Buttons -->
         <footer class="footer">
@@ -70,15 +74,15 @@
     <script>
         // Kakao SDK Initialization
         // Insert your JavaScript Key here
-        const KAKAO_JS_KEY = 'ENTER_YOUR_KAKAO_JS_KEY_HERE'; 
-        
+        const KAKAO_JS_KEY = '224e76c707132ae4c6f0626b9bb00fbb';
+
         if (typeof Kakao !== 'undefined') {
-          try {
-            Kakao.init(KAKAO_JS_KEY);
-            console.log('Kakao SDK Initialized:', Kakao.isInitialized());
-          } catch (e) {
-            console.error('Kakao SDK initialization failed:', e);
-          }
+            try {
+                Kakao.init(KAKAO_JS_KEY);
+                console.log('Kakao SDK Initialized:', Kakao.isInitialized());
+            } catch (e) {
+                console.error('Kakao SDK initialization failed:', e);
+            }
         }
 
         function sendKakaoLink() {
@@ -94,7 +98,7 @@
                     'description': '[만우절 단독] 무료 증정 이벤트에 당첨되셨습니다!'
                 }
             });
-            
+
             // Or using Kakao.Link.sendDefault for simpler testing without template registration
             /*
             Kakao.Link.sendDefault({
@@ -122,4 +126,5 @@
         }
     </script>
 </body>
+
 </html>
